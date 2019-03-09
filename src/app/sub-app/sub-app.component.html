@@ -1,0 +1,10 @@
+
+
+
+<mat-form-field>
+  <mat-select placeholder="Favorite Hero" (selectionChange)='conduct($event)'>
+    <mat-option *ngFor="let hero of boxArray" [value]="hero">
+      {{hero}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

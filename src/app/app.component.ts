@@ -8,9 +8,14 @@ import { HEROES } from "./shared/heroes";
 })
 export class AppComponent {
   title = 'odev1';
+  routerinfo:string;
   heroArray = HEROES;
 
   updateTitle(title:string) {
     this.title = title;
+  }
+
+  updateRouteInfo(info:string) {
+    this.routerinfo = info;
   }
 }

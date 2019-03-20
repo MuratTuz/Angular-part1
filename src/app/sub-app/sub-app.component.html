@@ -1,10 +1,22 @@
 
 
 
-<mat-form-field>
-  <mat-select placeholder="Favorite Hero" (selectionChange)='conduct($event)'>
-    <mat-option *ngFor="let hero of boxArray" [value]="hero">
-      {{hero}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-raised-button color="primary" (click)="fnHero()">HEROES</button>
+    <button mat-raised-button color="primary" (click)="fnCity()">SWISS CITIES</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div fxFlex fxLayout='row' fxLayoutGap='10px' fxLayoutAlign='center'>
+  <mat-form-field>
+    <mat-select [placeholder]="matSelectPlaceHolder" (selectionChange)='conduct($event)'>
+      <mat-option *ngFor="let select of selectArray" [value]="select">
+        <a [routerLink]="['/detail', select]">  {{select}} </a>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <router-outlet></router-outlet>
+
+</div>

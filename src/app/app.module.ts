@@ -13,12 +13,12 @@ import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFor
 import 'hammerjs';
 
 import { OtherModuleModule } from "./other-module/other-module.module";
-import { FirstRoutingModule } from './routing/first-routing.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +30,7 @@ import { FirstRoutingModule } from './routing/first-routing.module';
     MatToolbarModule,
     MatInputModule,
     MatButtonModule,
-    OtherModuleModule,
-    FirstRoutingModule
+    OtherModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

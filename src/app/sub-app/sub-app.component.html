@@ -12,7 +12,8 @@
   <mat-form-field>
     <mat-select [placeholder]="matSelectPlaceHolder" (selectionChange)='conduct($event)'>
       <mat-option *ngFor="let select of selectArray" [value]="select">
-        <a [routerLink]="['/detail', select]">  {{select}} </a>
+      <!-- <a [routerLink]="['/detail', select]">  {{select}} </a> -->  
+      {{select}} 
       </mat-option>
     </mat-select>
   </mat-form-field>

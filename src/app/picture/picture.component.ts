@@ -18,6 +18,7 @@ export class PictureComponent implements OnInit {
 
   ngOnInit() {
     const name = this.route.snapshot.params['picName'];
+    console.log(name);
     this.cityService.getCityInfo(name).subscribe(pInfo => this.info = pInfo);
   }
 }

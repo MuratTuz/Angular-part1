@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CITIES } from "../shared/cities";
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -16,17 +17,23 @@ export class SubAppComponent implements OnInit {
 
   selectArray: string[];
   matSelectPlaceHolder:string;
+  activateRoting:boolean = false;
 
   conduct(pvalue):void {
     this.conductor.emit(pvalue.value);
     console.log(pvalue.value);
+    if (this.activateRoting) {
+      this.router.navigate(['/detail/'+pvalue.value]);
+    }
   }
 
   
   fnHero() {
     this.selectArray = this.boxArray;
     this.matSelectPlaceHolder = 'Favorite Hero';
-    this.routeEmit.emit('Router is PASSIVE')
+    this.routeEmit.emit('Router is PASSIVE');
+    this.activateRoting = false;
+    this.router.navigate(['/']);
   }
 
   fnCity() {
@@ -34,8 +41,9 @@ export class SubAppComponent implements OnInit {
     this.matSelectPlaceHolder = 'Favorite City';
     this.routeEmit.emit('Router is ACTIVE');
     console.log(this.matSelectPlaceHolder);
+    this.activateRoting = true; 
   }
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.fnHero();

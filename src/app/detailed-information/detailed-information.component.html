@@ -2,11 +2,11 @@
 
 
 
-<div fxFlex fxLayout='column' fxLayoutGap='10px' fxLayoutAlign='center'>
-  <a [routerLink]="['/picture', info.name]"> City: {{info.name}}</a>
-  <a [routerLink]="['/picture', info.name]"> Altitute: {{info.altitute}}</a>
-  <a [routerLink]="['/picture', info.name]"> Population: {{info.population}}</a>
-  <a [routerLink]="['/picture', info.name]"> Square: {{info.square}}</a>
+<div>
+  <a [routerLink]="['./picture', info.name]"> City: {{info.name}}</a>
+  <a [routerLink]="['./picture', info.name]"> Altitute: {{info.altitute}}</a>
+  <a [routerLink]="['./picture', info.name]"> Population: {{info.population}}</a>
+  <a [routerLink]="['./picture', info.name]"> Square: {{info.square}}</a>
   
 <router-outlet></router-outlet>
 

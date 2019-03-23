@@ -11,12 +11,14 @@ import { PictureComponent } from '../picture/picture.component';
 
 import { FirstRoutingModule } from '../routing/first-routing.module';
 import { CityserviceService } from "../services/cityservice.service";
+import { EmptyComponent } from '../empty/empty.component';
 
 @NgModule({
   declarations: [
     SubAppComponent,
     DetailedInformationComponent,
-    PictureComponent
+    PictureComponent,
+    EmptyComponent
   ],
   imports: [
     CommonModule,
@@ -28,12 +30,13 @@ import { CityserviceService } from "../services/cityservice.service";
     MatInputModule
   ],
   providers: [
-    CityserviceService  // city service may be added if it is not work via app.module
+    CityserviceService  
   ],
   exports: [
     SubAppComponent,
     DetailedInformationComponent,
-    PictureComponent
+    PictureComponent,
+    EmptyComponent
   ]
 })
 export class OtherModuleModule { }

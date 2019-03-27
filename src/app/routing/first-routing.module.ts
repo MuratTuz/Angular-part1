@@ -8,10 +8,10 @@ import { EmptyComponent } from "../empty/empty.component";
 const firstRouter: Routes = [
   { path:'', component : EmptyComponent,
     children: [
-    //  {path:'', component: EmptyComponent},
+    {path:'?', component: EmptyComponent},
       { path:'detail/:name', component: DetailedInformationComponent,
       children: [
-    //    { path:'', component: EmptyComponent },
+        { path:'?', component: EmptyComponent },
         { path:'picture/:picName', component: PictureComponent }
       ]}
     ]}

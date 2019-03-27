@@ -17,13 +17,14 @@ export class SubAppComponent implements OnInit {
 
   selectArray: string[];
   matSelectPlaceHolder:string;
-  activateRoting:boolean = false;
+  activateRouting:boolean = false;
 
   conduct(pvalue):void {
     this.conductor.emit(pvalue.value);
     console.log(pvalue.value);
-    if (this.activateRoting) {
-      this.router.navigate(['/detail/'+pvalue.value]);
+    if (this.activateRouting) {
+      this.router.navigate(['/'], { relativeTo: this.route });
+      this.router.navigate(['/detail/'+pvalue.value], { relativeTo: this.route });
     }
   }
 
@@ -32,8 +33,8 @@ export class SubAppComponent implements OnInit {
     this.selectArray = this.boxArray;
     this.matSelectPlaceHolder = 'Favorite Hero';
     this.routeEmit.emit('Router is PASSIVE');
-    this.activateRoting = false;
-    this.router.navigate(['/']);
+    this.activateRouting = false;
+    this.router.navigate(['/'], { relativeTo: this.route });
   }
 
   fnCity() {
@@ -41,9 +42,10 @@ export class SubAppComponent implements OnInit {
     this.matSelectPlaceHolder = 'Favorite City';
     this.routeEmit.emit('Router is ACTIVE');
     console.log(this.matSelectPlaceHolder);
-    this.activateRoting = true; 
+    this.activateRouting = true; 
   }
-  constructor(private router: Router) { }
+  constructor(private router: Router, 
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.fnHero();

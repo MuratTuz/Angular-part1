@@ -17,8 +17,11 @@ export class DetailedInformationComponent implements OnInit {
   info: CityInfo;
 
   ngOnInit() {
-    const name = this.route.snapshot.params['name'];
-    this.cityService.getCityInfo(name).subscribe(pInfo => this.info = pInfo);
+    //const name = this.route.snapshot.params['name'];
+    const name = this.route.params.subscribe(url => {
+      this.cityService.getCityInfo(url.name).subscribe(pInfo => this.info = pInfo);
+    })
+
     console.log(this.info.name+'detail');
   }
 
